@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>90-Day DSA Interview Prep Calendar | MAANG Focus</title>
+  <meta name="description" content="Interactive 90-day DSA interview preparation calendar with 160+ curated problems, pattern-first learning, progress tracking and complexity analysis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <div class="header-inner">
+        <div class="logo">
+          <span class="logo-icon">&#9889;</span>
+          <div>
+            <div class="logo-title">MAANG Focus</div>
+            <div class="logo-sub">90-Day DSA Mastery Plan</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <button class="nav-btn active" data-view="calendar" onclick="switchView('calendar')">&#128197; Calendar</button>
+          <button class="nav-btn" data-view="patterns" onclick="switchView('patterns')">&#129329; Patterns</button>
+          <button class="nav-btn" data-view="progress" onclick="switchView('progress')">&#128202; Progress</button>
+          <button class="nav-btn" data-view="weaklist" onclick="switchView('weaklist')">&#128260; Revisit</button>
+        </nav>
+        <div class="header-stats">
+          <div class="hstat">
+            <span class="hstat-val" id="hstat-done">0</span>
+            <span class="hstat-label">Done</span>
+          </div>
+          <div class="hstat">
+            <span class="hstat-val" id="hstat-streak">0</span>
+            <span class="hstat-label">Streak &#128293;</span>
+          </div>
+          <div class="hstat">
+            <span class="hstat-val" id="hstat-pct">0%</span>
+            <span class="hstat-label">Complete</span>
+          </div>
+        </div>
+      </div>
+      <div class="global-progress-bar">
+        <div class="global-progress-fill" id="global-progress-fill"></div>
+      </div>
+    </header>
+
+    <main id="view-calendar" class="view active">
+      <div class="view-header">
+        <div>
+          <h1 class="view-title">90-Day DSA Calendar</h1>
+          <p class="view-desc">Pattern-first &#183; 160 curated problems from the PDF &#183; Complexity-aware progression</p>
+        </div>
+        <div class="week-filter">
+          <label>Jump to week:</label>
+          <select id="week-select" onchange="scrollToWeek(this.value)">
+            <option value="">&#8212; select &#8212;</option>
+          </select>
+        </div>
+      </div>
+      <div id="weeks-container"></div>
+    </main>
+
+    <main id="view-patterns" class="view">
+      <div class="view-header">
+        <div>
+          <h1 class="view-title">Pattern Library</h1>
+          <p class="view-desc">Every pattern used in the 90-day plan with template, complexity &amp; problem count</p>
+        </div>
+      </div>
+      <div id="patterns-container" class="patterns-grid"></div>
+    </main>
+
+    <main id="view-progress" class="view">
+      <div class="view-header">
+        <div>
+          <h1 class="view-title">Your Progress</h1>
+          <p class="view-desc">Visual breakdown by topic, difficulty &amp; week</p>
+        </div>
+        <button class="btn-ghost" onclick="resetAll()">&#128465; Reset All</button>
+      </div>
+      <div id="progress-container"></div>
+    </main>
+
+    <main id="view-weaklist" class="view">
+      <div class="view-header">
+        <div>
+          <h1 class="view-title">Revisit Queue</h1>
+          <p class="view-desc">Problems you flagged as weak &#8212; solve them again before your interview</p>
+        </div>
+      </div>
+      <div id="weaklist-container"></div>
+    </main>
+
+    <div id="problem-modal" class="modal-overlay" onclick="closeModal(event)">
+      <div class="modal" id="modal-inner">
+        <button class="modal-close" onclick="closeModalBtn()">&#10005;</button>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
