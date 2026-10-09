@@ -1,0 +1,9 @@
+Solved Problems :
+
+Remove Duplicates — same direction
+Move Zeroes — same direction
+Squares of Sorted Array — opposite direction
+Container With Most Water — opposite direction
+3Sum — fixed pointer + two pointers
+Sort Colors — partition / three pointers
+4SUM Problem - Fixed Pointers + two pointers
