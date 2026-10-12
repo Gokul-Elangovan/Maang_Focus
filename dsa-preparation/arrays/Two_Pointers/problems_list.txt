@@ -7,3 +7,5 @@ Container With Most Water — opposite direction
 3Sum — fixed pointer + two pointers
 Sort Colors — partition / three pointers
 4SUM Problem - Fixed Pointers + two pointers
+Two_sum Problem  - Two pointer
+Trapping_water Problem - 
