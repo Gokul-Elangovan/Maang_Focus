@@ -1,2 +1,0 @@
-# first non-repeating character:
-
