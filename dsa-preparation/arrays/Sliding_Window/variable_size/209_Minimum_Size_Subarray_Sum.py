@@ -20,6 +20,18 @@ Solution :
         ii.Remove left value from window_sum and increase left by 1
     5.return min value based on the conditions
 
+    Why we are using While : 
+        [2,3,1,2,4,3,7]
+
+        2=> 2+3 => 2+3+1 => 2+3+1+2  exceed target 
+
+        remove left move the left pointer +1 = > 3+1+2 
+        3+1+2+4=> remove left move the left pointer +1 => 1+2+4  min_len=3
+        1+2+4 => remove left move the left pointer +1 =>2+4      
+        2+4+3 => remove left move the left pointer +1 => 4+3     min_len=2
+        4+3 => remove left move the left pointer +1 => 4+3+7     min_len=2
+        3+7 => remove left move the left pointer +1 => 7         min_len=1
+
 """
 
 
@@ -38,16 +50,17 @@ def minSubArrayLen( target: int, nums: list[int]) -> int:
                   current_length=right-left+1
 
                   min_length=min(current_length,min_length)
-
+                #   print(window_sum)
                   window_sum-=nums[left]
                   left+=1
+                  print("executed")
         if min_length==999:
               return 0
         return min_length
             
         
 nums=[2,3,1,2,4,3,7]
-nums=[1,1,1,1,1,1,1,1]
+# nums=[1,1,1,1,1,1,1,1]
 print(float("inf"))
-res=minSubArrayLen(11,nums)
+res=minSubArrayLen(7,nums)
 print(res)
