@@ -1,6 +1,24 @@
 
 # Maximum average subarray of ke elements
 
+"""
+Question :  
+Need to develop a code for finding maximum and its average.
+
+Solution Notes : 
+    1.Find the sum of the value based on k value.
+    2.Start the loop from the k value as right.
+    2. to find next window elements sum
+        a. add next element of the array and
+        b. remove first element => this will give next window of sum.
+    3.return the max_sum/k value as float
+
+Error occured : 
+    1.I tried with python 2 its not capable of returning float if i do this. 
+        max_sum/k: it returns only int value.
+        then i changed to python 3.
+
+"""
 def findMaxAverage(nums, k):
         """
         :type nums: List[int]
